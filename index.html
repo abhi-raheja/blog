@@ -35,6 +35,7 @@
             height: 100vh;
             overflow: hidden;
             display: flex;
+            flex-direction: column;
             align-items: center;
             margin-top: -80px; /* Increased from -40px to -80px to move image higher */
             margin-left: -40px; /* Increased from -20px to -40px to move image more to the left */
@@ -72,15 +73,16 @@
             align-items: flex-end;
             padding-right: 20px;
         }
-        /* Make navigation links right-aligned too */
+        
+        /* Navigation links for desktop */
         .nav-links {
             text-align: right;
             width: 100%;
-            margin-top: 30px; /* Reduced from 60px to 30px to move navigation links up */
+            margin-top: 30px;
             font-size: 1.08em;
             letter-spacing: 0px;
             position: relative;
-            margin-right: -330px; /* Changed from -300px to -330px */
+            margin-right: -330px;
         }
         .nav-links a {
             display: block;
@@ -95,7 +97,7 @@
             width: 100%;
             margin-top: 20px;
             position: relative;
-            margin-right: -330px; /* Match the nav-links margin */
+            margin-right: -330px;
             display: flex;
             justify-content: flex-end;
             padding-right: 0;
@@ -108,66 +110,246 @@
         }
         /* Style all social icons consistently */
         .social-links a i {
-            font-size: 1.1em;
+            font-size: 16px;
             color: #000;
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        /* Instagram icon styling to match other icons */
+        .social-links a img {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: middle;
         }
         /* Make Instagram icon darker */
         .social-links a .fa-instagram {
             color: #000000; /* Pure black */
         }
+        
+        /* Mobile-only menu button */
+        .mobile-menu-button {
+            display: none; /* Hidden on desktop */
+            position: fixed;
+            top: 45px; /* Increased from 40px to 45px to move down 5px */
+            left: 15px;
+            z-index: 1001;
+            font-size: 24px;
+            background: transparent;
+            border: none;
+            color: #333; /* Changed back to dark color for hamburger */
+            cursor: pointer;
+        }
+        
+        /* When menu is open, change the button color to white */
+        body.menu-open .mobile-menu-button {
+            color: white;
+            top: 25px; /* Moved 20px higher from 45px when menu is open */
+        }
+        
+        /* Mobile dropdown menu (hidden by default) */
+        .mobile-menu {
+            display: none; /* Hidden on desktop */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #2F4F2F; /* Forest green */
+            transform: translateY(-100%);
+            transition: transform 0.4s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Mobile menu links */
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px 20px; /* Reduced top padding from 60px to 40px */
+        }
+        
+        .mobile-menu-links a {
+            display: block;
+            width: 80%;
+            padding: 15px 0;
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 5px;
+        }
+        
+        .mobile-menu-links a:last-child {
+            border-bottom: none;
+        }
+        
+        /* Mobile menu open state */
+        body.menu-open .mobile-menu {
+            transform: translateY(0);
+        }
+        
+        /* Push content down when menu is open */
+        body.menu-open .main-wrapper {
+            transform: translateY(180px);
+            transition: transform 0.4s ease;
+        }
+
         /* Mobile and tablet responsiveness */
         @media (max-width: 991px) {
+            /* Hide desktop navigation on mobile and show mobile menu instead */
+            .nav-links {
+                display: none;
+            }
+            
             .main-wrapper {
                 flex-direction: column;
                 height: auto;
-                overflow: visible;
+                transition: transform 0.4s ease;
+                margin-top: 30px; /* Added space between menu and content */
             }
+            
             .sidebar-container {
                 width: 100%;
                 padding: 20px;
+                box-sizing: border-box;
             }
+            
             .image-wrapper {
                 width: 100%;
                 height: auto;
-                margin-top: 0;
+                margin-top: 100px; /* Reduced from 200px to 100px to bring image up 100px */
                 margin-left: 0;
-                padding: 20px;
+                padding: 0;
+                box-sizing: border-box;
+                justify-content: center;
+                flex-direction: column;
+                align-items: flex-start;
             }
+            
             .image-wrapper img {
                 width: 100%;
-                max-height: none;
+                max-width: 400px;
+                height: auto;
+                margin: 0 auto;
+                display: block;
             }
+            
+            /* Bio text mobile styling - matches screenshot exactly */
+            .bio-text {
+                width: 100%;
+                max-width: 400px;
+                margin: 40px auto 0;
+                padding: 0;
+                box-sizing: border-box;
+                text-align: left;
+                font-size: 15px;
+            }
+            
+            .bio-text p {
+                margin-bottom: 25px;
+                line-height: 1.5;
+                width: 100%;
+                padding: 0;
+                text-align: left;
+            }
+            
+            /* Display mobile menu button */
+            .mobile-menu-button {
+                display: block;
+            }
+            
+            /* Display mobile menu container */
+            .mobile-menu {
+                display: block;
+            }
+            
+            /* Position logo in the top right */
             .logo {
-                text-align: center;
-                margin-right: 0;
+                margin-right: 0 !important;
+                width: auto;
+                padding: 0;
+                position: absolute;
+                top: 0;
+                right: 20px;
+                font-size: 3.75em; /* Increased by 50% from the original size (2.5em) */
             }
+            
             .logo div {
-                text-align: center;
+                text-align: right;
                 direction: ltr;
+                font-size: 0.8em;
+                line-height: 1;
             }
-            .nav-links, .social-links {
-                margin-right: 0;
-                align-items: center;
-                text-align: center;
-                justify-content: center;
-            }
-            .nav-links {
-                margin-top: 20px;
-            }
+            
+            /* Position social links under logo */
             .social-links {
-                margin-top: 10px;
+                margin-right: 0;
+                width: auto;
+                position: absolute;
+                top: 100px; /* Changed from 65px to 100px to move icons 35px lower */
+                right: 20px;
+                justify-content: flex-end;
+            }
+            
+            /* Reduce social icon size on mobile */
+            .social-links a {
+                margin-left: 12px;
+                font-size: 0.9em;
+            }
+            
+            /* Social icons consistent size on mobile */
+            .social-links a i,
+            .social-links a img {
+                width: 16px;
+                height: 16px;
+                font-size: 16px;
             }
         }
         
         /* Small mobile devices */
         @media (max-width: 480px) {
             .logo {
-                font-size: 3em;
+                font-size: 3.75em; /* Increased by 50% from the original size (2.5em) */
             }
+            
+            .mobile-menu-links a {
+                font-size: 20px;
+                padding: 12px 0;
+            }
+        }
+
+        /* Bio text styling for desktop */
+        .bio-text {
+            width: 100%;
+            max-width: 50%;
+            margin: 30px auto 0;
+            padding: 0;
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .bio-text p {
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Menu Button (only visible on mobile) -->
+    <button class="mobile-menu-button" aria-label="Toggle navigation menu">☰</button>
+    
+    <!-- Mobile Menu (only visible on mobile) -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="#">about</a>
+            <a href="#">blog</a>
+        </div>
+    </div>
+
     <div class="main-wrapper">
         <!-- Left side: Sidebar -->
         <div class="sidebar-container">
@@ -184,7 +366,7 @@
                 
                 <div class="social-links">
                     <a href="https://x.com/abhihereandnow" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://instagram.com/abhihereandnow" target="_blank"><img src="icons/Instagram_Glyph_Black.svg" alt="Instagram" style="width: 16px; height: 16px; display: inline-block; vertical-align: text-top;"></a>
+                    <a href="https://instagram.com/abhihereandnow" target="_blank"><img src="icons/Instagram_Glyph_Black.svg" alt="Instagram" style="width: 16px; height: 16px; vertical-align: middle;"></a>
                     <a href="https://github.com/abhi-raheja" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
@@ -193,7 +375,32 @@
         <!-- Right side: Image -->
         <div class="image-wrapper">
             <img src="images/IMG_1707.JPG" alt="Hero Image" class="hero-image">
+            <div class="bio-text" style="width: 100%; max-width: 400px; margin: 40px auto 0; padding: 0 20px; text-align: left;">
+                <p style="width: 100%; margin-bottom: 25px; line-height: 1.5; padding: 0; text-align: left;">I am a former journalist, producer, and founder. Most recently, I led teams at Caldera and Cyber.</p>
+                <p style="width: 100%; margin-bottom: 0; line-height: 1.5; padding: 0; text-align: left;">Currently experimenting with things at the intersection of Crypto x AI x HealthTech.</p>
+            </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.mobile-menu-button');
+            
+            menuButton.addEventListener('click', function() {
+                document.body.classList.toggle('menu-open');
+                
+                // Change menu button icon and adjust color via class toggling
+                this.innerHTML = document.body.classList.contains('menu-open') ? '×' : '☰';
+            });
+            
+            // Close menu when clicking links
+            document.querySelectorAll('.mobile-menu-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    document.body.classList.remove('menu-open');
+                    menuButton.innerHTML = '☰';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
