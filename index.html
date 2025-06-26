@@ -2,405 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abhi Raheja - Former journalist, producer, and founder. Currently exploring Crypto x AI x HealthTech.">
+    <meta name="keywords" content="Abhi Raheja, journalist, producer, founder, crypto, AI, healthtech">
+    <meta name="author" content="Abhi Raheja">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abhi-raheja.com/">
+    <meta property="og:title" content="Abhi Raheja">
+    <meta property="og:description" content="Former journalist, producer, and founder exploring Crypto x AI x HealthTech">
+    <meta property="og:image" content="images/IMG_1707.JPG">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://abhi-raheja.com/">
+    <meta property="twitter:title" content="Abhi Raheja">
+    <meta property="twitter:description" content="Former journalist, producer, and founder exploring Crypto x AI x HealthTech">
+    <meta property="twitter:image" content="images/IMG_1707.JPG">
+
     <title>Abhi Raheja</title>
+    
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Adding Play font by Jonas Hecksher -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for icons - updated to latest version -->
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* Inline styles to force correct layout */
-        body {
-            font-family: 'Play', sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-        }
-        
-        .main-wrapper {
-            display: flex;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .sidebar-container {
-            width: 20%;
-            padding-right: 0;
-            position: relative;
-        }
-        .image-wrapper {
-            width: 80%;
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: -80px; /* Increased from -40px to -80px to move image higher */
-            margin-left: -40px; /* Increased from -20px to -40px to move image more to the left */
-        }
-        .image-wrapper img {
-            width: 50%;
-            height: auto;
-            object-fit: contain;
-            margin: 0 auto;
-            max-height: 90vh;
-        }
-        /* Logo positioning */
-        .logo {
-            width: 100%;
-            position: relative;
-            padding-right: 20px;
-            font-family: 'Play', sans-serif;
-            font-size: 3.84em;
-            font-weight: 400;
-            letter-spacing: -2px;
-            line-height: 0.9;
-        }
-        .logo div {
-            width: 100%;
-            text-align: right;
-            direction: rtl;
-            white-space: nowrap; /* Prevent text wrapping */
-        }
-        /* Adjusted sidebar to handle right-aligned text */
-        .sidebar {
-            padding-left: 0;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            padding-right: 20px;
-        }
-        
-        /* Navigation links for desktop */
-        .nav-links {
-            text-align: right;
-            width: 100%;
-            margin-top: 30px;
-            font-size: 1.08em;
-            letter-spacing: 0px;
-            position: relative;
-            margin-right: -330px;
-        }
-        .nav-links a {
-            display: block;
-            margin-bottom: 15px;
-            color: #000;
-            text-decoration: none;
-            text-transform: lowercase;
-        }
-        /* Social links styling */
-        .social-links {
-            text-align: right;
-            width: 100%;
-            margin-top: 20px;
-            position: relative;
-            margin-right: -330px;
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 0;
-        }
-        .social-links a {
-            color: #000;
-            text-decoration: none;
-            margin-left: 15px;
-            font-size: 1.1em;
-        }
-        /* Style all social icons consistently */
-        .social-links a i {
-            font-size: 16px;
-            color: #000;
-            width: 16px;
-            height: 16px;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        /* Instagram icon styling to match other icons */
-        .social-links a img {
-            width: 16px;
-            height: 16px;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        /* Make Instagram icon darker */
-        .social-links a .fa-instagram {
-            color: #000000; /* Pure black */
-        }
-        
-        /* Mobile-only menu button */
-        .mobile-menu-button {
-            display: none; /* Hidden on desktop */
-            position: fixed;
-            top: 45px; /* Increased from 40px to 45px to move down 5px */
-            left: 15px;
-            z-index: 1001;
-            font-size: 24px;
-            background: transparent;
-            border: none;
-            color: #333; /* Changed back to dark color for hamburger */
-            cursor: pointer;
-        }
-        
-        /* When menu is open, change the button color to white */
-        body.menu-open .mobile-menu-button {
-            color: white;
-            top: 25px; /* Moved 20px higher from 45px when menu is open */
-        }
-        
-        /* Mobile dropdown menu (hidden by default) */
-        .mobile-menu {
-            display: none; /* Hidden on desktop */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #2F4F2F; /* Forest green */
-            transform: translateY(-100%);
-            transition: transform 0.4s ease;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-        
-        /* Mobile menu links */
-        .mobile-menu-links {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px 20px; /* Reduced top padding from 60px to 40px */
-        }
-        
-        .mobile-menu-links a {
-            display: block;
-            width: 80%;
-            padding: 15px 0;
-            color: white;
-            text-decoration: none;
-            font-size: 22px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            margin-bottom: 5px;
-        }
-        
-        .mobile-menu-links a:last-child {
-            border-bottom: none;
-        }
-        
-        /* Mobile menu open state */
-        body.menu-open .mobile-menu {
-            transform: translateY(0);
-        }
-        
-        /* Push content down when menu is open */
-        body.menu-open .main-wrapper {
-            transform: translateY(180px);
-            transition: transform 0.4s ease;
-        }
-
-        /* Mobile and tablet responsiveness */
-        @media (max-width: 991px) {
-            /* Hide desktop navigation on mobile and show mobile menu instead */
-            .nav-links {
-                display: none;
-            }
-            
-            .main-wrapper {
-                flex-direction: column;
-                height: auto;
-                transition: transform 0.4s ease;
-                margin-top: 30px; /* Added space between menu and content */
-            }
-            
-            .sidebar-container {
-                width: 100%;
-                padding: 20px;
-                box-sizing: border-box;
-            }
-            
-            .image-wrapper {
-                width: 100%;
-                height: auto;
-                margin-top: 100px; /* Reduced from 200px to 100px to bring image up 100px */
-                margin-left: 0;
-                padding: 0;
-                box-sizing: border-box;
-                justify-content: center;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .image-wrapper img {
-                width: 100%;
-                max-width: 400px;
-                height: auto;
-                margin: 0 auto;
-                display: block;
-            }
-            
-            /* Bio text mobile styling - matches screenshot exactly */
-            .bio-text {
-                width: 100%;
-                max-width: 400px;
-                margin: 40px auto 0;
-                padding: 0;
-                box-sizing: border-box;
-                text-align: left;
-                font-size: 15px;
-            }
-            
-            .bio-text p {
-                margin-bottom: 25px;
-                line-height: 1.5;
-                width: 100%;
-                padding: 0;
-                text-align: left;
-            }
-            
-            /* Display mobile menu button */
-            .mobile-menu-button {
-                display: block;
-            }
-            
-            /* Display mobile menu container */
-            .mobile-menu {
-                display: block;
-            }
-            
-            /* Position logo in the top right */
-            .logo {
-                margin-right: 0 !important;
-                width: auto;
-                padding: 0;
-                position: absolute;
-                top: 0;
-                right: 20px;
-                font-size: 3.75em; /* Increased by 50% from the original size (2.5em) */
-            }
-            
-            .logo div {
-                text-align: right;
-                direction: ltr;
-                font-size: 0.8em;
-                line-height: 1;
-            }
-            
-            /* Position social links under logo */
-            .social-links {
-                margin-right: 0;
-                width: auto;
-                position: absolute;
-                top: 100px; /* Changed from 65px to 100px to move icons 35px lower */
-                right: 20px;
-                justify-content: flex-end;
-            }
-            
-            /* Reduce social icon size on mobile */
-            .social-links a {
-                margin-left: 12px;
-                font-size: 0.9em;
-            }
-            
-            /* Social icons consistent size on mobile */
-            .social-links a i,
-            .social-links a img {
-                width: 16px;
-                height: 16px;
-                font-size: 16px;
-            }
-        }
-        
-        /* Small mobile devices */
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 3.75em; /* Increased by 50% from the original size (2.5em) */
-            }
-            
-            .mobile-menu-links a {
-                font-size: 20px;
-                padding: 12px 0;
-            }
-        }
-
-        /* Bio text styling for desktop */
-        .bio-text {
-            width: 100%;
-            max-width: 50%;
-            margin: 30px auto 0;
-            padding: 0;
-            text-align: left;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        
-        .bio-text p {
-            margin-bottom: 20px;
-        }
-    </style>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Inter font for all text -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Satoshi font from Fontshare -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Mobile Menu Button (only visible on mobile) -->
-    <button class="mobile-menu-button" aria-label="Toggle navigation menu">☰</button>
+    <div class="top-left-name">Abhi Raheja</div>
+    <nav class="top-right-tabs">
+      <a href="#" class="tab">Reading</a>
+      <a href="#" class="tab">Writing</a>
+      <a href="#" class="tab about">About</a>
+    </nav>
+    <div class="dot-grid-bg"></div>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <!-- Mobile Menu (only visible on mobile) -->
-    <div class="mobile-menu">
-        <div class="mobile-menu-links">
-            <a href="#">about</a>
-            <a href="#">blog</a>
-        </div>
+    <div class="landing-hero-outer">
+      <div class="landing-hero-container">
+        <div class="landing-hero-bg"></div>
+      </div>
     </div>
-
-    <div class="main-wrapper">
-        <!-- Left side: Sidebar -->
-        <div class="sidebar-container">
-            <div class="sidebar">
-                <div class="logo" style="margin-right: -350px;">
-                    <div>Abhi</div>
-                    <div>Raheja</div>
-                </div>
-                
-                <div class="nav-links">
-                    <a href="#">about</a>
-                    <a href="#">blog</a>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://x.com/abhihereandnow" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://instagram.com/abhihereandnow" target="_blank"><img src="icons/Instagram_Glyph_Black.svg" alt="Instagram" style="width: 16px; height: 16px; vertical-align: middle;"></a>
-                    <a href="https://github.com/abhi-raheja" target="_blank"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
+    
+    <main id="main-content" class="main-content minimal-main">
+        <div class="social-links minimal-social">
+            <a href="https://x.com/abhihereandnow" target="_blank" rel="noopener noreferrer" aria-label="Follow on X (Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="https://instagram.com/abhihereandnow" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><img src="icons/Instagram_Glyph_Black.svg" alt="" width="16" height="16"></a>
+            <a href="https://github.com/abhi-raheja" target="_blank" rel="noopener noreferrer" aria-label="View GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
         </div>
-        
-        <!-- Right side: Image -->
-        <div class="image-wrapper">
-            <img src="images/IMG_1707.JPG" alt="Hero Image" class="hero-image">
-            <div class="bio-text" style="width: 100%; max-width: 400px; margin: 40px auto 0; padding: 0 20px; text-align: left;">
-                <p style="width: 100%; margin-bottom: 25px; line-height: 1.5; padding: 0; text-align: left;">I am a former journalist, producer, and founder. Most recently, I led teams at Caldera and Cyber.</p>
-                <p style="width: 100%; margin-bottom: 0; line-height: 1.5; padding: 0; text-align: left;">Currently experimenting with things at the intersection of Crypto x AI x HealthTech.</p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.querySelector('.mobile-menu-button');
-            
-            menuButton.addEventListener('click', function() {
-                document.body.classList.toggle('menu-open');
-                
-                // Change menu button icon and adjust color via class toggling
-                this.innerHTML = document.body.classList.contains('menu-open') ? '×' : '☰';
-            });
-            
-            // Close menu when clicking links
-            document.querySelectorAll('.mobile-menu-links a').forEach(link => {
-                link.addEventListener('click', function() {
-                    document.body.classList.remove('menu-open');
-                    menuButton.innerHTML = '☰';
-                });
-            });
-        });
-    </script>
+    </main>
+    
+    <footer class="footer minimal-footer">
+        <p>&copy; 2024 Abhi Raheja</p>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Best Practices
+
+When maintaining or extending this website, follow these guidelines:
+
+## HTML Structure ([index.html](mdc:index.html))
+- Use semantic HTML5 elements
+- Maintain mobile-first responsive design
+- Keep accessibility in mind with proper ARIA attributes
+- Preserve the existing class naming conventions
+- Use Font Awesome for icons when possible
+
+## CSS Guidelines ([styles.css](mdc:styles.css))
+- Follow the existing modular CSS structure
+- Maintain the established responsive breakpoints
+- Use relative units (em, %, vh) over fixed units
+- Keep the cascading order of styles:
+  1. Reset/Base styles
+  2. Layout styles
+  3. Component styles
+  4. Responsive adjustments
+
+## Asset Management
+- Store images in the `images/` directory
+- Keep icons in the `icons/` directory
+- Optimize images before adding to the project
+- Use SVG for icons when possible
+
+## Performance Considerations
+- Minimize external dependencies
+- Use system fonts or Google Fonts
+- Maintain efficient CSS selectors
+- Keep image sizes optimized for web
+
+## Version Control
+- Keep meaningful commit messages
+- Document any major layout or style changes
+- Test responsive behavior before committing
+- Maintain backwards compatibility

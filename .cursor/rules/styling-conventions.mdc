@@ -1,0 +1,74 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Styling Conventions
+
+The website follows modern CSS conventions using CSS Custom Properties and mobile-first responsive design as defined in [styles.css](mdc:styles.css):
+
+## CSS Architecture
+- **CSS Custom Properties**: Centralized design tokens in `:root`
+- **Mobile-first approach**: Base styles for mobile, enhanced for larger screens
+- **Modular structure**: Organized by component and functionality
+- **Progressive enhancement**: Core functionality works without JavaScript
+
+## Design Tokens (CSS Custom Properties)
+### Colors
+- `--color-primary`: #000000 (black)
+- `--color-secondary`: #2F4F2F (forest green)
+- `--color-background`: #ffffff (white)
+- `--color-text`: #000000 (black)
+- `--color-text-muted`: #666666 (gray)
+
+### Typography
+- `--font-family-primary`: 'Play', sans-serif
+- `--font-size-base`: 16px
+- `--font-size-large`: 18px
+- `--font-size-xl`: 24px
+- `--font-size-2xl`: 32px
+- `--font-size-3xl`: 48px
+- `--font-size-4xl`: 64px
+- `--line-height-base`: 1.6
+- `--line-height-tight`: 1.2
+
+### Spacing System
+- `--spacing-xs`: 0.25rem (4px)
+- `--spacing-sm`: 0.5rem (8px)
+- `--spacing-md`: 1rem (16px)
+- `--spacing-lg`: 1.5rem (24px)
+- `--spacing-xl`: 2rem (32px)
+- `--spacing-2xl`: 3rem (48px)
+- `--spacing-3xl`: 4rem (64px)
+
+### Layout & Transitions
+- `--container-max-width`: 1200px
+- `--header-height`: 80px (60px on mobile)
+- `--border-radius`: 8px
+- `--transition-fast`: 0.2s ease
+- `--transition-base`: 0.3s ease
+- `--transition-slow`: 0.5s ease
+
+## Responsive Breakpoints
+- **Mobile**: < 768px (default)
+- **Tablet**: 768px - 1023px
+- **Desktop**: 1024px - 1199px
+- **Large Desktop**: ≥ 1200px
+
+## Layout Patterns
+- **CSS Grid**: For main layout sections
+- **Flexbox**: For navigation and component alignment
+- **Fixed Header**: Sticky navigation with backdrop blur
+- **Mobile Menu**: Slide-down overlay with smooth animations
+
+## Animation Guidelines
+- **Loading animations**: Staggered entrance effects
+- **Hover states**: Subtle transforms and color changes
+- **Transitions**: Consistent timing using custom properties
+- **Reduced motion**: Respects user preferences
+
+## Component Styling
+- **Consistent spacing**: Using spacing tokens
+- **Focus states**: Visible outlines for accessibility
+- **Interactive elements**: Clear hover and focus feedback
+- **Typography hierarchy**: Consistent font sizes and weights
