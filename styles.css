@@ -54,8 +54,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -79,7 +79,7 @@ body.loaded {
 
 /* ===== ACCESSIBILITY ===== */
 .skip-link {
-  position: absolute;
+    position: absolute;
   top: -40px;
   left: 6px;
   background: var(--color-primary);
@@ -107,7 +107,7 @@ body.loaded {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+    right: 0;
   height: var(--header-height);
   background-color: var(--color-background);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -122,7 +122,7 @@ body.loaded .header {
 }
 
 .nav {
-  display: flex;
+    display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
@@ -154,7 +154,7 @@ body.loaded .logo {
 
 /* Desktop Navigation */
 .desktop-nav {
-  display: flex;
+    display: flex;
   list-style: none;
   gap: var(--spacing-xl);
   margin: 0;
@@ -171,7 +171,7 @@ body.loaded .desktop-nav {
 
 .nav-link {
   color: var(--color-text);
-  text-decoration: none;
+    text-decoration: none;
   font-size: var(--font-size-large);
   text-transform: lowercase;
   transition: var(--transition-fast);
@@ -201,7 +201,7 @@ body.loaded .desktop-nav {
 
 /* Social Links */
 .social-links {
-  display: flex;
+    display: flex;
   gap: var(--spacing-md);
   align-items: center;
   opacity: 0;
@@ -216,7 +216,7 @@ body.loaded .social-links {
 
 .social-links a {
   color: var(--color-text);
-  text-decoration: none;
+    text-decoration: none;
   font-size: var(--font-size-large);
   transition: var(--transition-fast);
   display: flex;
@@ -296,7 +296,7 @@ body.loaded .social-links {
 .mobile-nav-menu {
   list-style: none;
   display: flex;
-  flex-direction: column;
+        flex-direction: column;
   gap: var(--spacing-lg);
 }
 
@@ -313,10 +313,10 @@ body.loaded .social-links {
 .mobile-nav-link:hover,
 .mobile-nav-link:focus {
   color: rgba(255, 255, 255, 0.8);
-}
-
+    }
+    
 /* ===== MAIN CONTENT ===== */
-.main-content {
+    .main-content {
   margin-top: var(--header-height);
   min-height: calc(100vh - var(--header-height));
   display: flex;
@@ -328,7 +328,7 @@ body.loaded .social-links {
 .main-content.minimal-main {
   flex: 1 0 auto;
   display: flex;
-  flex-direction: column;
+        flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 70vh;
@@ -384,8 +384,8 @@ body.loaded .social-links {
 .minimal-social a:hover,
 .minimal-social a:focus {
   opacity: 1;
-}
-
+    }
+    
 .minimal-social img {
   width: 20px;
   height: 20px;
@@ -395,14 +395,14 @@ body.loaded .social-links {
 }
 
 .minimal-nav {
-  width: 100%;
+        width: 100%;
   display: flex;
   justify-content: center;
   gap: 2.5rem;
   padding: 2.5rem 0 1.5rem 0;
   background: none;
   border: none;
-  position: relative;
+        position: relative;
   z-index: 10;
 }
 
@@ -414,15 +414,15 @@ body.loaded .social-links {
   letter-spacing: 0.5px;
   transition: opacity 0.2s;
   color: #fff !important;
-}
-
+    }
+    
 .subtle-link:hover,
 .subtle-link:focus {
   opacity: 1;
-}
-
+    }
+    
 .footer.minimal-footer {
-  text-align: center;
+        text-align: center;
   font-size: 1rem;
   color: var(--color-text-muted);
   background: none;
@@ -437,7 +437,7 @@ body.loaded .social-links {
   background-color: var(--color-background);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding: var(--spacing-xl) 0;
-  text-align: center;
+        text-align: center;
   color: var(--color-text-muted);
   font-size: var(--font-size-small);
   opacity: 0;
@@ -529,9 +529,9 @@ body.loaded .footer {
   
   .desktop-nav {
     display: none;
-  }
-  
-  .social-links {
+    }
+    
+    .social-links {
     display: none;
   }
   
@@ -551,11 +551,11 @@ body.loaded .footer {
   .bio-text {
     font-size: var(--font-size-large);
     text-align: center;
-  }
-  
+    }
+    
   .bio-content {
     padding: 0 var(--spacing-md);
-  }
+    }
 }
 
 /* Small mobile devices */
@@ -684,8 +684,8 @@ body, .main-title, .main-bio, .bio-text, .footer.minimal-footer, .minimal-nav, .
   font-family: 'Satoshi', sans-serif !important;
   color: #1a237e !important;
   text-shadow: 0 2px 16px rgba(255,255,255,0.45), 0 1px 2px rgba(255,255,255,0.18);
-}
-
+    }
+    
 .cloud-bg {
   position: absolute;
   z-index: 0;
@@ -769,7 +769,7 @@ body, .main-title, .main-bio, .bio-text, .footer.minimal-footer, .minimal-nav, .
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem 1rem 0 1rem;
-  }
+    }
   .header-left {
     max-width: 100vw;
   }

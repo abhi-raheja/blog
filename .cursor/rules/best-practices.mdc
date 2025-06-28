@@ -5,39 +5,65 @@ alwaysApply: false
 ---
 # Best Practices
 
-When maintaining or extending this website, follow these guidelines:
+When maintaining or extending this modern website, follow these guidelines:
 
 ## HTML Structure ([index.html](mdc:index.html))
-- Use semantic HTML5 elements
-- Maintain mobile-first responsive design
-- Keep accessibility in mind with proper ARIA attributes
-- Preserve the existing class naming conventions
-- Use Font Awesome for icons when possible
+- **Semantic HTML5**: Use proper semantic elements (`<header>`, `<nav>`, `<main>`, `<footer>`)
+- **Accessibility**: Include ARIA attributes, proper heading hierarchy, and alt text
+- **SEO**: Use meta tags, structured data, and semantic markup
+- **Performance**: Optimize images with proper attributes and loading strategies
 
 ## CSS Guidelines ([styles.css](mdc:styles.css))
-- Follow the existing modular CSS structure
-- Maintain the established responsive breakpoints
-- Use relative units (em, %, vh) over fixed units
-- Keep the cascading order of styles:
-  1. Reset/Base styles
-  2. Layout styles
-  3. Component styles
-  4. Responsive adjustments
+- **CSS Custom Properties**: Use design tokens for consistency and maintainability
+- **Mobile-first**: Write base styles for mobile, enhance for larger screens
+- **Progressive enhancement**: Ensure core functionality works without JavaScript
+- **Performance**: Use efficient selectors and minimize repaints/reflows
+- **Accessibility**: Include focus states and respect reduced motion preferences
 
-## Asset Management
-- Store images in the `images/` directory
-- Keep icons in the `icons/` directory
-- Optimize images before adding to the project
-- Use SVG for icons when possible
+## JavaScript Guidelines ([script.js](mdc:script.js))
+- **ES6+ Classes**: Use modern JavaScript with modular class structure
+- **Progressive enhancement**: Enhance functionality, don't replace it
+- **Accessibility**: Include keyboard navigation and screen reader support
+- **Performance**: Use event delegation and debounce/throttle where appropriate
+- **Error handling**: Graceful degradation and proper error management
 
-## Performance Considerations
-- Minimize external dependencies
-- Use system fonts or Google Fonts
-- Maintain efficient CSS selectors
-- Keep image sizes optimized for web
+## Responsive Design
+- **Mobile-first approach**: Design for mobile first, then enhance
+- **Fluid layouts**: Use CSS Grid and Flexbox for flexible layouts
+- **Responsive images**: Optimize images for different screen sizes
+- **Touch-friendly**: Ensure adequate touch targets (minimum 44px)
+- **Performance**: Optimize for mobile performance and data usage
 
-## Version Control
-- Keep meaningful commit messages
-- Document any major layout or style changes
-- Test responsive behavior before committing
-- Maintain backwards compatibility
+## Accessibility Standards
+- **WCAG 2.1 AA compliance**: Follow accessibility guidelines
+- **Keyboard navigation**: All interactive elements must be keyboard accessible
+- **Screen reader support**: Proper ARIA labels and semantic markup
+- **Color contrast**: Maintain sufficient contrast ratios
+- **Focus management**: Clear focus indicators and logical tab order
+
+## Performance Optimization
+- **Critical rendering path**: Optimize above-the-fold content
+- **Image optimization**: Use appropriate formats and sizes
+- **Font loading**: Optimize web font loading with font-display
+- **Code splitting**: Load only necessary JavaScript
+- **Caching**: Implement proper caching strategies
+
+## Code Quality
+- **Consistent naming**: Use BEM methodology for CSS classes
+- **Documentation**: Comment complex logic and maintain README
+- **Version control**: Meaningful commit messages and feature branches
+- **Testing**: Test across different devices and browsers
+- **Code review**: Review for accessibility, performance, and maintainability
+
+## Browser Support
+- **Modern browsers**: Support latest 2 versions of major browsers
+- **Progressive enhancement**: Core functionality works in older browsers
+- **Feature detection**: Use feature detection, not browser detection
+- **Fallbacks**: Provide fallbacks for modern CSS and JavaScript features
+
+## Security
+- **External links**: Use `rel="noopener noreferrer"` for external links
+- **Content Security Policy**: Implement CSP headers
+- **HTTPS**: Serve all content over HTTPS
+- **Input validation**: Validate and sanitize any user inputs
+- **Dependencies**: Keep dependencies updated and audit regularly

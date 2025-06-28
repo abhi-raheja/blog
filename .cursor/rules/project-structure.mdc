@@ -5,30 +5,46 @@ alwaysApply: false
 ---
 # Project Structure Guide
 
-This is a personal blog website project with a modern, responsive design. The main components are:
+This is a modern, responsive personal blog website built with semantic HTML5, modern CSS, and vanilla JavaScript.
 
 ## Core Files
-- [index.html](mdc:index.html): The main entry point that defines the website structure and content
-- [styles.css](mdc:styles.css): Contains all styling rules including responsive design and layout
+- [index.html](mdc:index.html): Semantic HTML5 structure with accessibility features and SEO optimization
+- [styles.css](mdc:styles.css): Modern CSS with custom properties, responsive design, and animations
+- [script.js](mdc:script.js): Vanilla JavaScript with ES6+ classes for functionality and performance
 
 ## Assets
 - `icons/`: Contains social media icons (e.g., Instagram)
 - `images/`: Stores website images including profile photos
+- `favicon.ico`: Website favicon (placeholder - needs generation)
 
 ## Key Features
-1. Responsive Design
-   - Desktop: Split layout with sidebar (20%) and main content (80%)
-   - Mobile: Stacked layout with hamburger menu
-   - Tablet: Adaptive layout with optimized spacing
+1. **Modern Architecture**
+   - Semantic HTML5 with proper ARIA attributes
+   - CSS Custom Properties for maintainable styling
+   - Mobile-first responsive design
+   - ES6+ JavaScript with modular classes
 
-2. Typography
-   - Primary font: 'Play' by Jonas Hecksher
-   - Font Awesome icons for social links
-   - Responsive text sizing
+2. **Responsive Design**
+   - Mobile-first approach with progressive enhancement
+   - CSS Grid and Flexbox for modern layouts
+   - Fluid typography and spacing
+   - Breakpoints: 480px, 768px, 1024px, 1200px
 
-3. Components
-   - Navigation sidebar with logo
+3. **Performance & Accessibility**
+   - Optimized font loading and image preloading
+   - Skip links and keyboard navigation
+   - Focus management and screen reader support
+   - Reduced motion support for accessibility
+
+4. **Components**
+   - Fixed header with navigation
+   - Mobile hamburger menu with smooth animations
+   - Hero section with image and bio
    - Social media links
-   - Mobile-friendly menu
-   - Image display area
-   - Bio text section
+   - Footer with copyright
+
+5. **Interactive Features**
+   - Smooth scrolling navigation
+   - Mobile menu with keyboard support
+   - Hover effects and transitions
+   - Loading animations and states
