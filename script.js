@@ -229,10 +229,92 @@ const Utils = {
   }
 };
 
+// ===== MOBILE HAMBURGER MENU =====
+class MobileHamburgerMenu {
+  constructor() {
+    console.log('🔍 MobileHamburgerMenu constructor called');
+    this.hamburger = document.getElementById('mobileHamburger');
+    this.overlay = document.getElementById('mobileNavOverlay');
+    this.isOpen = false;
+    
+    console.log('🍔 Hamburger element:', this.hamburger);
+    console.log('📱 Overlay element:', this.overlay);
+    
+    if (!this.hamburger) {
+      console.error('❌ Mobile hamburger element not found!');
+    }
+    if (!this.overlay) {
+      console.error('❌ Mobile nav overlay element not found!');
+    }
+    
+    this.init();
+  }
+  
+  init() {
+    console.log('🔧 MobileHamburgerMenu init called');
+    if (this.hamburger && this.overlay) {
+      console.log('✅ Both elements found, adding event listeners');
+      this.hamburger.addEventListener('click', () => this.toggle());
+      
+      // Close menu when clicking on overlay
+      this.overlay.addEventListener('click', (e) => {
+        if (e.target === this.overlay) {
+          this.close();
+        }
+      });
+      
+      // Close menu when clicking on nav links
+      const navLinks = this.overlay.querySelectorAll('.tab');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => this.close());
+      });
+      
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.isOpen) {
+          this.close();
+        }
+      });
+    } else {
+      console.error('❌ Cannot initialize - missing elements:', {
+        hamburger: !!this.hamburger,
+        overlay: !!this.overlay
+      });
+    }
+  }
+  
+  toggle() {
+    if (this.isOpen) {
+      this.close();
+    } else {
+      this.open();
+    }
+  }
+  
+  open() {
+    console.log('🍔 Opening mobile menu...');
+    this.isOpen = true;
+    this.hamburger.classList.add('active');
+    this.overlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    console.log('✅ Mobile menu opened');
+  }
+  
+  close() {
+    console.log('🍔 Closing mobile menu...');
+    this.isOpen = false;
+    this.hamburger.classList.remove('active');
+    this.overlay.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+    console.log('❌ Mobile menu closed');
+  }
+}
+
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize all classes
-  new MobileMenu();
+  // new MobileMenu(); // Disabled - not used in this design
+  new MobileHamburgerMenu();
   new SmoothScroll();
   new ScrollAnimations();
   new PerformanceOptimizer();
